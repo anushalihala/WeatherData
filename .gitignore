@@ -1,2 +1,5 @@
 # Default ignored files
 /.idea/*
+weatherdata/weatherdata/__pycache__/
+
+*.pyc
