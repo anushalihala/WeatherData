@@ -10,6 +10,7 @@ class Region(models.Model):
 class Weather(models.Model):
     region = models.ForeignKey(Region, on_delete=models.CASCADE)
     month = models.ForeignKey(Month, on_delete=models.CASCADE)
+    year = models.PositiveIntegerField()
     tmax = models.FloatField()
     tmin = models.FloatField()
     tmean = models.FloatField()
