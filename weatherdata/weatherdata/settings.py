@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "ukmetoffice.apps.UkmetofficeConfig"
+    "ukmetoffice.apps.UkmetofficeConfig",
+
+    "django_extensions",
 ]
 
 MIDDLEWARE = [
