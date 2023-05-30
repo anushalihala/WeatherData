@@ -1,6 +1,7 @@
 import unittest
 from django.test import Client
 import datetime
+from ukmetoffice.models import Region, Month
 
 # Create your tests here.
 class TestRegionAll(unittest.TestCase):
@@ -127,3 +128,12 @@ class Test2023(unittest.TestCase):
         # needs to be updated later in the year
         self.assertEqual(response[4]["rainfall"], None)
         self.assertEqual(response[11]["rainfall"], None)
+
+class TestModels(unittest.TestCase):
+    def test_regions(self):
+        qs = Region.objects.all()
+        self.assertEqual(len(qs), 17)
+
+    def test_months(self):
+        qs = Month.objects.all()
+        self.assertEqual(len(qs), 12)
