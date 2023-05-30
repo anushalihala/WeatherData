@@ -1,5 +1,5 @@
 from ukmetoffice.models import Region, Month, Weather
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from django.http import Http404
 
 # Create your views here.
@@ -19,6 +19,10 @@ def process_queryset(qs):
             "airfrost": record.airfrost
         })
     return output
+
+def index(request):
+    message = "API Docs can be found at https://github.com/anushalihala/WeatherData/blob/master/docs/API_Docs.md"
+    return HttpResponse(message)
 
 def region_all(request, region):
     qs = Weather.objects.select_related("region").select_related("month").filter(region__name=region).all().order_by("year", "month")
